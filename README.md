@@ -2,7 +2,7 @@
 
 A modern, elegant, and responsive Todo List application built with **Next.js, TypeScript, and Tailwind CSS**. Designed to make everyday task management simple, organized, and enjoyable through a clean interface, thoughtful interactions, and a soft visual aesthetic.
 
-🔗 **Live Demo:** [View the live application](https://kylie-cosmetics-clone.vercel.app/)
+🔗 **Live Demo:** [View the live application](https://todo-app-chi-indol.vercel.app/)
 
 📦 **GitHub Repository:** [sogandshahnaz/todo-app](https://github.com/sogandshahnaz/todo-app)
 
