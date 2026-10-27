@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   CalendarDays,
   ChevronLeft,
@@ -45,17 +45,24 @@ export default function DueDateSelect({
 }: DueDateSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [viewDate, setViewDate] = useState(() => {
-    if (value) {
-      const selectedDate = new Date(`${value}T12:00:00`);
+  const [viewDate, setViewDate] = useState(
+  () => new Date(2000, 0, 1)
+);
 
-      if (!Number.isNaN(selectedDate.getTime())) {
-        return selectedDate;
-      }
+useEffect(() => {
+  if (!isOpen) return;
+
+  if (value) {
+    const selectedDate = new Date(`${value}T12:00:00`);
+
+    if (!Number.isNaN(selectedDate.getTime())) {
+      setViewDate(selectedDate);
+      return;
     }
+  }
 
-    return new Date();
-  });
+  setViewDate(new Date());
+}, [isOpen, value]);
 
   const month = viewDate.getMonth();
   const year = viewDate.getFullYear();
